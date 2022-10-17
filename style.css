@@ -28,7 +28,7 @@ main h1{
 }
 
 form{
-  /* tmp */
+  margin-top: 2rem;
   border: 1px solid #aaa;
   border-radius: 1rem;
   box-shadow: 0 0 10px -3px rgba(0,0,0,0.2);
