@@ -1,0 +1,20 @@
+{
+  "name": "odin-library",
+  "version": "1.0.0",
+  "description": "Odin project: Library",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tOskr-uk/odin-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tOskr-uk/odin-library/issues"
+  },
+  "homepage": "https://github.com/tOskr-uk/odin-library#readme"
+}

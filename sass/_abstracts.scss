@@ -1,0 +1,55 @@
+// CSS VARIABLES
+:root{
+
+    --color-primary: #1b9103;
+    --color-primary-light: #24c304;
+    --color-primary-dark: #115f02;
+
+    --color-secondary: #2e51ea;
+    --color-secondary-light: #5d77ef;
+    --color-secondary-dark: #102ba2;
+
+    --color-grey-dark-1: #666;
+    --color-grey-dark-2: #555;
+    --color-grey-dark-3: #444;
+    --color-grey-dark-4: #333;
+    --color-grey-dark-5: #222;
+
+    --color-grey-light-1: #777;
+    --color-grey-light-2: #888;
+    --color-grey-light-3: #999;
+    --color-grey-light-4: #bbb;
+    --color-grey-light-5: #ddd;
+    
+    --color-white: #fff;
+    --color-black: #000;
+}
+
+// SASS VARIABLES
+
+
+
+
+
+
+// MIXINS
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin bs-dark{
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+}
+
+@mixin bs-light{
+    box-shadow: 0 0 10px -5px rgba(0,0,0,0.6);
+}
+

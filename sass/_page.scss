@@ -1,0 +1,87 @@
+.form{
+    position: relative;
+    background-color: var(--color-white);
+
+    padding: 2rem;
+    width: 30rem;
+    
+    &__exit{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        font-size: 2rem;
+        text-decoration: none;
+        color: var(--color-grey-dark-1);
+        padding: 1rem;
+        line-height: 1rem;
+    }
+
+    &__group{
+        padding: .5rem 0;
+        display: flex;
+        flex-direction: column;
+
+        &:last-of-type{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 1rem 0;
+        }
+    }
+
+    &__input{
+        order: 1;
+        padding: .5rem 1rem;
+        border: 1px solid var(--color-grey-light-1);
+        border-radius: 2px;    
+        font-family: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: block;
+        width: 100%;
+        font-size: 1.4rem;
+
+        &:focus{
+            outline: 0;
+        }
+    }
+
+    &__input:placeholder-shown ~ &__label{    
+        bottom: -2.5rem;
+        left: 1.2rem;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__label{
+        color: var(--color-grey-dark-3);
+        font-size: 1.4rem;
+        padding-bottom: .3rem;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+        z-index: 0;
+
+        transition: all 0.2s;
+    }
+
+    &__label-checkbox{
+        color: var(--color-grey-dark-3);
+        font-size: 1.4rem;
+    }
+
+    &__button{
+        @include bs-light;
+        width: 100%;
+    }
+
+    &__input-checkbox{
+        height: 3rem;
+        width: 3rem;
+        margin-left: 1rem;
+    }
+}

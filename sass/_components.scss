@@ -1,0 +1,23 @@
+// BUTTONS
+.btn{
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--color-grey-dark-4);
+    line-height: 1rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid var(--color-grey-light-1);
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+        color: var(--color-grey-dark-5);
+        border-color: var(--color-grey-light-2);
+        outline: 0;
+    }
+}
