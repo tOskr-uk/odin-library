@@ -6,21 +6,18 @@ const pages = document.getElementById('pages');
 const read = document.getElementById('read');
 const library = document.querySelector('.library');
 
-
-
 function addBookToLibrary(title, author, pages, read){
     const obj = new Book(title, author, pages, read);
     myLibrary.push(obj);
-    // alert(myLibrary);
 }
 
 add.addEventListener('click', ()=>{
     addBookToLibrary(title.value, author.value, pages.value, read.checked);
     clearTable();
     buildTable();
-    // console.log(myLibrary);
 })
 
+// clears the html table
 function clearTable(){
     library.innerHTML='';
 }
@@ -28,8 +25,9 @@ function clearTable(){
 function buildTable(){
     // build table head
     const t = document.createElement('table');
+    t.classList.add('table');
     let tr = document.createElement('tr');
-    let td = ['Title', 'Author', 'Pages', 'Read'];
+    let td = ['Title', 'Author', 'Pages', 'Read', 'Delete'];
     td.forEach(e=>{
         const th = document.createElement('th');
         th.innerText = e;
@@ -38,7 +36,7 @@ function buildTable(){
     t.appendChild(tr);
     library.appendChild(t);
 
-    // populate the table with myLibrary data
+    // populate the table with myLibrary array data
     for(let i=0; i<myLibrary.length; i++){
         let obj = myLibrary[i];
         tr = document.createElement('tr');
@@ -47,11 +45,19 @@ function buildTable(){
             td.innerText=obj[key];
             tr.appendChild(td);
         }
+
+        // add delete button
+        let a = document.createElement('a');
+        a.classList.add('btn');
+        a.innerText='Delete';
+        td = document.createElement('td');
+        td.appendChild(a);
+        tr.appendChild(td);
         t.appendChild(tr);
     }
 }
 
-
+// generates some non specific data for the myLibrary array
 function generateSomeData(){
     const obj1 = new Book('The Sword of Shannara', 'Terry Brooks', 759, false);
     myLibrary.push(obj1)
@@ -64,6 +70,8 @@ buildTable();
 
 
 
+
+// book constructor
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;

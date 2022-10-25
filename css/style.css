@@ -35,24 +35,6 @@ html {
   box-sizing: border-box;
 }
 
-/* TABLES */
-th,
-td {
-  padding: 1rem 1.5rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-grey-light-3);
-}
-
-th:first-child,
-td:first-child {
-  padding-left: 0;
-}
-
-th:last-child,
-td:last-child {
-  padding-right: 0;
-}
-
 html {
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
@@ -156,6 +138,22 @@ body {
   color: var(--color-grey-dark-5);
   border-color: var(--color-grey-light-2);
   outline: 0;
+}
+
+/* TABLES */
+.table th,
+.table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-grey-light-3);
+}
+.table th:first-child,
+.table td:first-child {
+  padding-left: 0;
+}
+.table th:last-child,
+.table td:last-child {
+  padding-right: 0;
 }
 
 .form {
