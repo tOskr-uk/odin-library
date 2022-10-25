@@ -22,14 +22,20 @@ addBook.addEventListener('click', ()=>{
     buildTable();
 })
 
-// event listener for deleting a book button press
+// event listener for deleting a book or changing read status button press
 library.addEventListener('click', e=>{
     if(e.target.classList.contains('book-del')){
-        const arrEl = e.target.getAttribute('data');
-        myLibrary.splice(arrEl,1);
-        clearTable();
-        buildTable();
+        const atr = e.target.getAttribute('data');
+        myLibrary.splice(atr,1);
     }
+
+    if(e.target.classList.contains('read-status')){
+        const atr = e.target.getAttribute('data');
+        const val = myLibrary[atr].read;
+        val==true?myLibrary[atr].read=false:myLibrary[atr].read=true;
+    }
+    clearTable();
+    buildTable();
 })
 
 // clears the html table
@@ -60,12 +66,14 @@ function buildTable(){
             td = document.createElement('td');
             if(key === 'read'){
                 let a = document.createElement('a');
-                console.log(obj[key]);
+                // console.log(obj[key]);
                 if(obj[key] == true){
-                    a.classList.add('btn', 'btn--blue');
+                    a.classList.add('btn', 'btn--blue', 'read-status');
+                    a.setAttribute('data', i);
                     a.innerText='Read';
                 } else {
-                    a.classList.add('btn', 'btn--grey');
+                    a.classList.add('btn', 'btn--grey', 'read-status');
+                    a.setAttribute('data', i);
                     a.innerText='Unread';
                 }
                 td.appendChild(a);
@@ -107,12 +115,3 @@ function Book(title, author, pages, read) {
 
 generateSomeData();
 buildTable();
-
-function getKey(){
-    // console.log(myLibrary[0]);
-    for(key in myLibrary[0]){
-        // console.log(key);
-    }
-}
-
-getKey()
