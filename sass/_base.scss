@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
-
 // BASE RESETS
 *,
 *::before,
@@ -12,15 +10,8 @@
 }
 
 html{
-    font-size: 62.5%;
-    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
-
-body{
-    font-size: 1.6rem;
-}
-
 
 
 /* TABLES */
@@ -39,17 +30,4 @@ td:first-child{
 th:last-child,
 td:last-child{
     padding-right: 0;
-}
-
-
-// TYPOGRAPHY
-.heading-primary{
-    color: var(--color-grey-dark-3);
-}
-
-.heading-secondary{
-    color: var(--color-grey-dark-1);
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
 }
