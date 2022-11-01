@@ -3,13 +3,6 @@ const addBook = document.getElementById('add-book');
 const library = document.querySelector('.library');
 let btnCollDel;
 
-
-// adds new books to the myLibrary array
-// function addBookToLibrary(title, author, pages, read){
-//     const obj = new Book(title, author, pages, read);
-//     myLibrary.push(obj);
-// }
-
 // event listener for adding a book button press
 addBook.addEventListener('click', ()=>{
     const title = document.getElementById('title');
@@ -20,7 +13,6 @@ addBook.addEventListener('click', ()=>{
     const book = new Book(title.value, author.value, pages.value, read.checked);
     console.log(book);
     book.addBook();
-    // addBookToLibrary(title.value, author.value, pages.value, read.checked);
     clearTable();
     buildTable();
 })
