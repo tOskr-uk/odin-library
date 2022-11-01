@@ -5,10 +5,10 @@ let btnCollDel;
 
 
 // adds new books to the myLibrary array
-function addBookToLibrary(title, author, pages, read){
-    const obj = new Book(title, author, pages, read);
-    myLibrary.push(obj);
-}
+// function addBookToLibrary(title, author, pages, read){
+//     const obj = new Book(title, author, pages, read);
+//     myLibrary.push(obj);
+// }
 
 // event listener for adding a book button press
 addBook.addEventListener('click', ()=>{
@@ -17,7 +17,10 @@ addBook.addEventListener('click', ()=>{
     const pages = document.getElementById('pages');
     const read = document.getElementById('read');
 
-    addBookToLibrary(title.value, author.value, pages.value, read.checked);
+    const book = new Book(title.value, author.value, pages.value, read.checked);
+    console.log(book);
+    book.addBook();
+    // addBookToLibrary(title.value, author.value, pages.value, read.checked);
     clearTable();
     buildTable();
 })
@@ -66,7 +69,6 @@ function buildTable(){
             td = document.createElement('td');
             if(key === 'read'){
                 let a = document.createElement('a');
-                // console.log(obj[key]);
                 if(obj[key] == true){
                     a.classList.add('btn', 'btn--blue', 'read-status');
                     a.setAttribute('data', i);
@@ -94,15 +96,21 @@ function buildTable(){
         tbl.appendChild(tr);
     }
     btnCollDel = document.querySelectorAll('.book-del')
-    // console.log(btnCollDel);
 }
 
 // generates some non specific data for the myLibrary array
 function generateSomeData(){
-    const obj1 = new Book('The Sword of Shannara', 'Terry Brooks', 759, true);
-    myLibrary.push(obj1)
-    const obj2 = new Book('The Elfstones of Shannara', 'Terry Brooks', 906, false);
-    myLibrary.push(obj2)
+    const bookArr = [
+        ['The Sword of Shannara', 'Terry Brooks', 759, true],
+        ['The Elfstones of Shannara', 'Terry Brooks', 906, false],
+        ['2001: A Space Odyssey', 'Arthur C. Clarke', 224, true],
+        ['Mr Bump', 'Roger Hargreaves', 36, true]
+    ];
+
+    bookArr.forEach(el=>{
+        const book = new Book(el[0], el[1], el[2], el[3]);
+        book.addBook();
+    })
 }
 
 // book constructor
@@ -111,6 +119,15 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+}
+
+Book.prototype.addBook = function(){
+    myLibrary.push({
+        title: this.title, 
+        author: this.author, 
+        pages: this.pages, 
+        read: this.read
+    });
 }
 
 generateSomeData();
