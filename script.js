@@ -105,20 +105,22 @@ function generateSomeData(){
 }
 
 // book constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-Book.prototype.addBook = function(){
-    myLibrary.push({
-        title: this.title, 
-        author: this.author, 
-        pages: this.pages, 
-        read: this.read
-    });
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    addBook(){
+        myLibrary.push({
+            title: this.title, 
+            author: this.author, 
+            pages: this.pages, 
+            read: this.read
+        });
+    }
 }
 
 generateSomeData();
