@@ -11,7 +11,6 @@ addBook.addEventListener('click', ()=>{
     const read = document.getElementById('read');
 
     const book = new Book(title.value, author.value, pages.value, read.checked);
-    console.log(book);
     book.addBook();
     clearTable();
     buildTable();
@@ -96,7 +95,7 @@ function generateSomeData(){
         ['The Sword of Shannara', 'Terry Brooks', 759, true],
         ['The Elfstones of Shannara', 'Terry Brooks', 906, false],
         ['2001: A Space Odyssey', 'Arthur C. Clarke', 224, true],
-        ['Mr Bump', 'Roger Hargreaves', 36, true]
+        ['Mr. Tickle', 'Roger Hargreaves', 36, true]
     ];
 
     bookArr.forEach(el=>{
